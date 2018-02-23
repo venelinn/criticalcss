@@ -1,4 +1,4 @@
-# CriricalCSS Demo's README
+# Crirical CSS Example README
 
 
 Note: This is PHP file with .html ext.
