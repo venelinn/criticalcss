@@ -1,0 +1,153 @@
+/** 
+ * ===================================================================
+ * 01. reset - normalize
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+img {
+	border: 0;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+textarea {
+	overflow: auto;
+}
+
+
+/** 
+ * ===================================================================
+ * 02. basic/base setup styles
+ *
+ * ------------------------------------------------------------------- 
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-weight: normal;
+	line-height: 1;
+	text-rendering: optimizeLegibility;
+	word-wrap: break-word;
+	-webkit-overflow-scrolling: touch;
+	-webkit-text-size-adjust: none;
+}
+
+body,
+input,
+button {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Media
+ * ------------------------------------------------------------------- 
+ */
+img,
+video {
+	max-width: 100%;
+	height: auto;
+}
+
+/**
+ * Typography resets
+ * ------------------------------------------------------------------- 
+ */
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	-webkit-font-variant-ligatures: common-ligatures;
+	-moz-font-variant-ligatures: common-ligatures;
+	font-variant-ligatures: common-ligatures;
+	text-rendering: optimizeLegibility;
+}
+
+em,
+i {
+	font-style: italic;
+	line-height: inherit;
+}
+
+small {
+	font-size: 60%;
+	line-height: inherit;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+li {
+	display: block;
+}
+
+/**
+ * links
+ * ------------------------------------------------------------------- 
+ */
+a {
+	text-decoration: none;
+	line-height: inherit;
+}
+

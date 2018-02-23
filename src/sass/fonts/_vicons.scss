@@ -1,0 +1,86 @@
+$vicons-path: "assets/fonts/vicons/" !default;
+$vicons-font-family: "vicons" !default;
+
+// Fonts
+@if $vicons-font-family=="vicons" {
+    @font-face {
+        font-family: '#{$vicons-font-family}';
+        src :   url('#{$vicons-path}vicons.woff2') format('woff2'),
+                 url('#{$vicons-path}vicons.woff') format('woff'),
+                url('#{$vicons-path}vicons.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+}
+
+.vicon {
+    font-family: 'vicons' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$vicon-twitter: "\e009";
+$vicon-tumblr: "\e00a";
+$vicon-facebook: "\e00b";
+$vicon-graduation: "\e019";
+$vicon-bag: "\e04f";
+$vicon-instagram: "\e609";
+$vicon-linkedin: "\e60a";
+$vicon-google: "\e60d";
+
+
+.vicon-twitter {
+    &:before {
+        content: $vicon-twitter;
+    }
+}
+
+.vicon-tumblr {
+    &:before {
+        content: $vicon-tumblr;
+    }
+}
+
+.vicon-facebook {
+    &:before {
+        content: $vicon-facebook;
+    }
+}
+
+.vicon-graduation {
+    &:before {
+        content: $vicon-graduation;
+    }
+}
+
+.vicon-bag {
+    &:before {
+        content: $vicon-bag;
+    }
+}
+
+.vicon-instagram {
+    &:before {
+        content: $vicon-instagram;
+    }
+}
+
+.vicon-linkedin {
+    &:before {
+        content: $vicon-linkedin;
+    }
+}
+
+.vicon-google {
+    &:before {
+        content: $vicon-google;
+    }
+}

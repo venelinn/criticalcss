@@ -1,0 +1,40 @@
+{{#portfolio}}
+<div class="bgrid folio-item jsFolioItem">
+    <a href="#modal-{{id}}" class="folio-item__link">
+        {{#each photos}}
+        <picture>
+            <!-- <source srcset="{{thmbUrl2x}}.webp 1x, {{url}}.webp 2x" type="image/webp"> -->
+            <source srcset="{{thmbUrl}}.jpg 1x, {{thmbUrl2x}}.jpg 2x" type="image/jpeg"> 
+            <img src="{{thmbUrl}}.jpg" alt="{{../name}}">
+        </picture>
+        {{/each}}
+        <span class="folio-item-table">
+            <span class="folio-item-cell">
+                <h3 class="folio-title">{{name}}</h3>
+                <span class="folio-types">{{types}}</span>
+            </span>
+        </span>
+    </a>                    
+</div>
+
+<div id="modal-{{id}}" class="modal slider mfp-hide">
+    <div class="modal__header">
+        {{#each photos}}
+        <picture>
+            <!-- <source srcset="{{thmbUrl2x}}.webp 1x, {{url}}.webp 2x" type="image/webp"> -->
+            <source srcset="{{thmbUrl2x}}.jpg 1x, {{url}}.jpg 2x" type="image/jpeg"> 
+            <img src="{{thmbUrl2x}}.webp" alt="{{../name}}">
+        </picture>
+        {{/each}}
+    </div>
+    <div class="modal__content">
+        <div class="modal__content__name"><a href="{{url}}" target="_blank" rel="noopener" title="Visit {{name}}">{{name}}</a></div>
+        <p>{{description}}</p>
+        <div class="modal__categories">{{types}}</div>
+    </div>
+    <div class="modal__footer">
+        <a href="{{url}}" target="_blank" rel="noopener">Visit</a>
+        <button class="jsModalDismiss">Close</a>
+    </div>
+</div>
+{{/portfolio}}

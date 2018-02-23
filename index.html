@@ -1,0 +1,347 @@
+<?php 
+// Note: This is PHP file with .html ext.
+
+require_once 'inc/Mobile_Detect.php';
+$detect = new Mobile_Detect;
+if ( $detect->isTablet() ) {
+    $device = "deviceTablet ";
+}
+
+if( $detect->isMobile() && !$detect->isTablet() ){
+    $device = "isPhone ";
+}
+
+if( $detect->isMobile() ){
+    $mdevice = "isMobile ";
+}
+
+if( !$detect->isMobile() && !$detect->isTablet() ){
+    $device = "isDesktop ";
+}
+
+if( $detect->isiOS() ){
+    $os = "ios";
+} elseif( $detect->isAndroidOS() ){
+    $os = "android";
+}  else {
+    $os = "desktop";
+}
+
+?>
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <style type="text/css">
+        <?php include('critical/critical.css.php'); ?>
+    </style>
+    <meta charset="utf-8" />
+    <title>Joe Doe • Frond-end Developer • UX/UI • PageSpeed</title>
+    <meta name="description" content="Frond-end Developer, Performance specialist, SEO optimization, UX/UI" />
+    <meta name="keywords" content="optimization, css, html, flexbox, css grid, performance, ux, ui, seo, frond-end" />
+    <meta name="author" content="Joe Doe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta property="fb:app_id" content="138835436152124"/>
+    <meta property="og:locale" content="en_CA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Joe Doe • Personal Portfolio" />
+    <meta property="og:description" content="Frond-end Developer, Performance specialist, SEO optimization, UX/UI" />
+    <meta property="og:url" content="https://joe.doe/" />
+    <meta property="og:site_name" content="Joe Doe • Personal Portfolio" />
+    <meta property="og:image" content="http://via.placeholder.com/3000x150" /> 
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <script type="text/javascript">
+        var c = document.getElementsByTagName('html')[0];c.className = c.className.replace(/no-js/, 'js'),
+            aJsFiles = [];
+    </script>
+</head>
+
+<body class="<?php echo $device; echo $mdevice; ?>">
+    <!-- intro section
+   ================================================== -->
+    <section class="intro">
+        <div class="intro__content">
+            <span class="intro__msg">Hi there!</span>
+            <h1>I'm Joe Doe</h1>
+            <p class="intro__position">
+                <span>Front-end Developer</span>
+                <span>UI/UX</span>
+            </p>
+            <ul class="intro__cta btn__group">
+                <li><a class="button jsSmoothScroll" href="#about" title="More About Venelin">About Me</a></li>
+                <li><a class="button jsSmoothScroll" href="#portfolio" title="My Portfolio">Portfolio</a></li>
+            </ul>
+        </div>
+        <!-- /intro-content -->
+        <ul class="intro__social">
+            <li><a href="#" target="_blank" rel="noopener" title="Visit my Facebook page"><i class="vicon vicon-facebook"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener" title="Visit my instagram feed"><i class="vicon vicon-instagram"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener" title="Visit my Professional portfolio in Linkedin"><i class="vicon vicon-linkedin"></i></a></li>
+            <li><a href="#" target="_blank" rel="noopener" title="Follow me on Twitter"><i class="vicon vicon-twitter"></i></a></li>
+
+        </ul>
+        <!-- /intro-social -->
+    </section>
+    <!-- /intro -->
+    <!-- about section
+   ================================================== -->
+    <section id="about" class="section section--about">
+        <div class="grid grid--about">
+            <h2>About</h2>
+            <h3>Let me introduce myself.</h3>
+            <div class="about__intro">
+                <p>My name is Joe Doe. I'm Frond-end and UX/UI developer.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <h5><strong>Technologies and Philosophy</strong></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <h5><strong>Spare Time</strong></h5>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <p><strong>Consectetur adipiscing elit, sed do eiusmod tempor!</strong></p>
+            </div>
+        </div>
+        <!-- /section-intro -->
+        <div class="about__content">
+            <div>
+                <div class="about__label">Profile</div>
+                <ul class="about__info-list">
+                    <li>
+                        <strong>Name:</strong>
+                        <span>Joe Doe</span>
+                    </li>
+                    <li>
+                        <strong>Job:</strong>
+                        <span>Front-end Developer, UX/UI </span>
+                    </li>
+                    <li>
+                        <strong>Website:</strong>
+                        <span>www.website.ca</span>
+                    </li>
+                    <li>
+                        <strong>Email:</strong>
+                        <span>emailgmail@mail.com</span>
+                    </li>
+                </ul>
+                <!-- /info-list -->
+            </div>
+            <div>
+                <div class="about__label">Skills</div>
+                <ul class="about__skills">
+                    <li>
+                        <div class="progress percent100"><span>100%</span></div>
+                        <strong>CSS/HTML</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent80"><span>80%</span></div>
+                        <strong>UI/UX</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent90"><span>90%</span></div>
+                        <strong>PageSpeed</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent60"><span>60%</span></div>
+                        <strong>jQuery</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent35"><span>35%</span></div>
+                        <strong>Angular</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent75"><span>75%</span></div>
+                        <strong>Wordpress</strong>
+                    </li>
+                    <li>
+                        <div class="progress percent70"><span>70%</span></div>
+                        <strong>SEO</strong>
+                    </li>
+                </ul>
+                <!-- /skill-bars -->
+            </div>
+        </div>
+        
+        <ul class="about__cta btn__group">
+            <li><a href="#contact" title="Hire Venelin Nikolov" class="button jsSmoothScroll">Hire Me</a></li>
+            <li><a href="#" title="Download Venelin Nikolov's CV" class="button button-primary">Download CV</a></li>
+        </ul>
+    </section>
+    <!-- /process-->
+    <!-- resume Section
+   ================================================== -->
+    <section class="section section--resume">
+        <div class="section-intro">
+            <h2>Resume</h2>
+            <h3>More of my credentials.</h3>
+            <p class="lead"></p>        
+        </div>
+        <!-- /section-intro-->
+        <div class="timeline">
+            <div class="resume-header">
+                <div class="timeline__exp">Work Experience</div>
+            </div>
+            <!-- /resume-header -->
+   
+            <div class="timeline-wrap">
+                <div class="timeline-block">
+                    <div class="timeline-ico">
+                        <i class="vicon vicon-bag"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="timeline__pos">Front-end / UX</div>
+                        <p>Nov 2009 - Jan 2018</p>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline__company">Company Name</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+                <div class="timeline-block">
+                    <div class="timeline-ico">
+                        <i class="vicon vicon-bag"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="timeline__pos">Front-end / UX</div>
+                        <p>Jan 2008 - Sept 2009</p>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline__company">Company Name</div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                    </div>
+                </div>
+            </div>
+                <!-- /timeline-wrap -->
+        </div>
+        <!-- /resume-timeline -->
+        <div class="timeline">
+            <div class="resume-header">
+                <div class="timeline__exp">Education</div>
+            </div>
+            <!-- /resume-header -->
+            <div class="timeline-wrap">
+                <div class="timeline-block">
+                    <div class="timeline-ico">
+                        <i class="vicon vicon-graduation"></i>
+                    </div>
+                    <div class="timeline-header">
+                        <div class="timeline__pos">Bachelor Degree</div>
+                        <p>Sept 2005 - June 2009</p>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline__company">Computer science</div>
+                        <p>University Name</p>
+                    </div>
+                </div>
+                <!-- /timeline-block -->
+            </div>
+            <!-- /timeline-wrap -->
+            
+        </div>
+        <!-- /resume-timeline -->
+    </section>
+    <!-- /features -->
+    <!-- Portfolio Section
+   ================================================== -->
+     <section id="portfolio" class="section section--portfolio">
+        <div class="section-intro">
+            <div class="col-twelve">
+                <h2>Portfolio</h2>
+                <h3>Check Out Some of My Works.</h3>
+            </div>
+        </div>
+        <div class="portfolio-content">
+            <div class="stack jsFolioWrapper">Loading Portfolio...</div>       
+        </div>
+        <!-- /portfolio-content -->
+    </section>
+    <!-- /portfolio -->
+
+    <!-- Services Section
+   ================================================== -->
+
+    <!-- /services -->
+    <section id="contact" class="section section--contact">
+        <div class="section-intro">
+            <h2>Contact</h2>
+            <h3>I'd Love To Hear From You.</h3>
+        </div>
+        <!-- /section-intro -->
+        <div class="contact-form">
+            <!-- form -->
+            <form name="contactForm" id="contactForm" class="jsContactForm" method="post" action="">
+                <fieldset>
+                    <div class="form-field">
+                        <label for="contactName" class="sr-only">Name</label>
+                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactEmail" class="sr-only">Email</label>
+                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactSubject" class="sr-only">Subject</label>
+                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+                    </div>
+                    <div class="form-field">
+                        <label for="contactMessage" class="sr-only">Message</label>
+                        <textarea name="contactMessage" id="contactMessage" placeholder="Message" rows="5" cols="5" required=""></textarea>
+                    </div>
+                    <div class="form-field">
+                        <button class="submitform">Submit</button>
+                        <div id="submit-loader">
+                            <div class="text-loader">Sending...</div>
+                            <div class="s-loader">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+            <!-- Form End -->
+            <!-- contact-warning -->
+            <div id="message-warning"></div>
+            <!-- contact-success -->
+            <div id="message-success">Your message was sent, thank you!</div>
+        </div>
+        <!-- /contact-info -->
+    </section>
+    <!-- /contact -->
+    <!-- footer
+   ================================================== -->
+    <footer>
+        <div class="copyright">
+            <span>&copy;2018 website.ca</span>
+        </div>
+        
+    </footer>
+
+    <script src="/assets/critical/jquery-3.2.1.min.js"></script>
+    <script src="/assets/critical/fetch-inject.js"></script>
+    <script src="/assets/js/critical.min.js"></script>
+    <?php // <link href="/assets/css/style.css" rel="stylesheet"> ?>
+    <script type="text/javascript">
+        $.getDefer('/assets/css/style.css')
+    </script>
+    
+    <!-- Java Script
+   ================================================== -->
+    <script type="text/javascript">
+        $.getDefer('/assets/js/jquery.validation.min.js');
+        $.getDefer('/assets/js/magnific-popup.min.js');
+        $.getDefer('/assets/js/handlebars.min.js');
+        $.getDefer('/assets/js/main.min.js');
+        
+        if(aJsFiles.length > 0) {
+            if (window.fetch && typeof window.fetch !== 'undefined') {
+                fetchInject(aJsFiles);
+            } else {
+                $.loopDeferScript(aJsFiles);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+@mixin grid($col, $gap, $fr, $repeat: false) {
+    display: grid;
+    grid-gap: $gap;
+    @include breakpoint($smedium + 1) {
+        grid-template-columns: repeat($col, $fr);
+    }
+    @include breakpoint($small + 1 $smedium) {
+        grid-template-columns: repeat($col - 1, $fr);
+    }
+    @include breakpoint(0 $small) {
+        grid-template-columns: repeat($col - 1, $fr);
+    }
+}
+
+
+@include placeholder('clear') {
+    clear: both;
+}
+
+
+@mixin font-smoothing {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@include placeholder('yp-icons') {
+    font-family: 'yp-icons' !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    text-transform: none !important;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin ellipsis($width: false) {
+    @if $width {
+        width: $width;
+    }
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin arrow($width, $color, $direction, $showContent: true) {
+    @if $showContent {
+        content: '';
+    }
+    width: 0;
+    height: 0;
+    border: $width solid transparent;
+    @if $direction=="right" {
+        border-left-color: $color;
+    }
+    @if $direction=="left" {
+        border-right-color: $color;
+    }
+    @if $direction=="top" {
+        border-bottom-color: $color;
+    }
+    @if $direction=="bottom" {
+        border-top-color: $color;
+    }
+}
+
+@mixin disableClick {
+    pointer-events: none;
+    cursor: default;
+}
+
+@mixin enableClick {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+
+@mixin calc($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}

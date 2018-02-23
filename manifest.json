@@ -1,0 +1,8 @@
+{
+    "name": "JoeDoe.ca",
+    "short_name": "JoeDoe.ca",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "Front-end developer | UI/UX"
+}

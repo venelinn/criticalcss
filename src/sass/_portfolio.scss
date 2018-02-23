@@ -1,0 +1,237 @@
+.portfolio-content {
+	@include breakpoint($smedium + 1) {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+.stack {
+	position: relative;
+    display: grid;
+    grid-gap: 15px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.folio-item {
+	padding: 0;
+	height: 100%;
+	img {
+		display: block;
+	    object-fit: cover;
+	    width: 100%;
+	    height: 100%;
+		transition: all 0.5s ease-in-out;
+	}
+}
+.folio-item__link {
+	display: block;
+	position: relative;
+	@include breakpoint($smedium + 1) {
+		overflow: hidden;
+		&:before {
+			transition: all 0.5s ease-in-out;
+			content: '';
+			position: absolute;
+			background-color: transparent;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+		}
+		&:hover {
+			img {
+				transform: scale(1.05);
+			}
+			&:before {
+				background-color: rgba(0, 0, 0, 0.7);
+			}
+			.folio-item-cell {
+				left: 0;
+			}
+		}
+	}
+}
+
+
+.folio-item-table {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	@include breakpoint($smedium + 1) {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+	}
+}
+
+.folio-item-cell {
+	text-align: center;
+	position: relative;
+	@include breakpoint($smedium + 1) {
+		transition: all 0.5s ease-in-out;
+		left: -100%;
+	}
+	@include breakpoint(0 $smedium) {
+		margin-top: 5px;
+	}
+}
+
+.folio-title {
+	margin-bottom: 0;
+	@include breakpoint($medium + 1) {
+		padding: 0 2rem;
+		font-size: 2rem;
+	}
+	@include breakpoint(0 $medium) {
+		font-size: .8rem;
+	}
+	@include breakpoint($smedium + 1) {
+		color: #fff;
+	}
+	@include breakpoint(0 $smedium) {
+		color: var(--color-dark);	
+		font-weight: normal;
+	}
+}
+
+.folio-types {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: .8rem;
+	@include breakpoint($medium + 1) {
+		text-transform: uppercase;
+		letter-spacing: .1rem;
+	}
+	@include breakpoint(0 $medium) {
+		display: none;	
+	}
+}
+
+
+/**
+ * Popup Modal
+ * ------------------------------------------------------------------
+ */
+.modal {
+	background: #fff;
+	@include breakpoint($smedium + 1) {
+		max-width: 600px;
+		margin: 0 auto;
+	}
+	@include breakpoint(0 $smedium) {
+		width: auto;
+		margin: 0 20px;
+	}
+}
+
+.modal__header {
+	padding: .3rem .3rem 0;
+	img {
+		width: 100%;
+	}
+}
+.modal__content {
+	padding: 2rem;
+	font-family: sans-serif;
+	
+}
+.modal__content__name {
+	font-size: 1.3rem;
+	font-weight: bold;
+	color: var(--base-color);
+	margin-bottom: .6rem;
+	a {
+		color: inherit;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.modal__categories {
+	font-family: sans-serif;
+	font-size: .9rem;
+	display: block;
+	text-align: left;
+	color: rgba(0, 0, 0, 0.5);
+	margin-top: 1rem;
+}
+
+.modal__footer {
+	display: flex;
+	flex-direction: row-reverse;
+	background: #000;
+	a, button {
+		font-family: sans-serif;
+		font-size: .9rem;
+		line-height: 4rem;
+		color: #fff;
+		border: 0;
+		background-color: inherit;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		cursor: pointer;
+		display: block;
+		text-align: center;
+		flex: 1;
+		transition: all 0.3s ease-in-out;
+		&:first-child {
+			border-right: 1px solid rgba(255, 255, 255, 0.1);
+		}
+		&:hover {
+			color: #fff;
+			background-color: var(--base-color);
+			border: none;
+		}
+	}
+}
+
+
+/**
+ * transition effect for modal popup
+ * ------------------------------------------------------------------ 
+ */
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+	opacity: 0;
+	transition: all 0.3s ease-in-out;
+}
+
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+	opacity: .9;
+}
+
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+	opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: all 0.3s ease-in-out;
+}
+
+/* content animate in */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+	opacity: 0;
+	transform: translateY(-100%);
+}

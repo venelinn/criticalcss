@@ -1,0 +1,33 @@
+{
+  "name": "CriticalCSS",
+  "version": "1.0.0",
+  "description": "CriticalCSS gulpfile",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-css-critical": "^0.1.2",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sass-unicode": "^1.0.1",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "html-minifier": "^3.5.7",
+    "path": "^0.12.7",
+    "pump": "^2.0.0",
+    "require-dir": "^0.3.2"
+  },
+  "dependencies": {},
+  "author": "Venelin Nikolov",
+  "license": "ISC"
+}

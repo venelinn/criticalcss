@@ -1,0 +1,188 @@
+.section--contact {
+	background: #151515;
+	h3 {
+		color: white;
+	}
+	.section-intro h5 {
+		color: var(--base-color);
+	}
+	form {
+		margin-top: 0;
+		margin-bottom: 3rem;
+	}
+}
+
+
+/* contact form */
+.contact-form {
+	max-width: var(--page-max-width);
+    margin-left: auto;
+    margin-right: auto;
+	::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.3);
+	}
+	:-moz-placeholder {
+		color: rgba(255, 255, 255, 0.3);  /* Firefox 18- */
+	}
+	::-moz-placeholder {
+		color: rgba(255, 255, 255, 0.3);  /* Firefox 19+ */
+	}
+	:-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.3);
+	}
+	.placeholder {
+		color: rgba(255, 255, 255, 0.3) !important;
+	}
+	fieldset {
+		border: none;
+	}
+}
+
+
+.form-field {
+	position: relative;
+	label {
+		font-family: sans-serif;
+		font-size: .7rem;
+		position: absolute;
+		bottom: -0.9rem;
+		right: .3rem;
+		text-transform: uppercase;
+		letter-spacing: .1rem;
+		padding: .4rem 1rem;
+		margin: 0;
+		color: #FFFFFF;
+		display: block;
+		background: var(--base-color);
+		border-radius: 2px;
+		&:after {
+			content: "";
+			position: absolute;
+			left: -5px;
+			top: 50%;
+			margin-top: -6px;
+			border-top: 5px solid transparent;
+			border-bottom: 5px solid transparent;
+			border-right: 5px solid var(--base-color);
+		}
+	}
+	input,
+	textarea {
+		display: block;
+		border: 0;
+		outline: none;
+		vertical-align: middle;
+		font-family: sans-serif;
+		max-width: 100%;
+		background: transparent;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		transition: all 0.3s ease-in-out;
+		width: 100%;
+		color: rgba(255, 255, 255, 0.7);
+		margin-bottom: 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+		padding: 1.5rem 1rem;
+		&:focus {
+			border-color: var(--base-color);
+			color: #fff;
+		}
+		&.error {
+			border-bottom-color: var(--base-color);
+		}
+	}
+	textarea {
+		min-height: 10rem;
+	}
+}
+
+.submitform {
+    display: block;
+    letter-spacing: .2rem;
+    width: 100%;
+    background: var(--base-color);
+    color: #fff;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    border-radius: 44px;
+	transition: all 0.3s ease-in-out;
+	&:hover,
+	&:focus {
+		background: darkred;
+	}
+	@include breakpoint($smedium + 1) {
+    	margin-top: 4rem;
+    	line-height: 4rem;
+		font-size: 1.3rem;
+		
+	}
+	@include breakpoint(0 $smedium) {
+		margin-top: 2rem;
+    	line-height: 3rem;
+		font-size: 1.1rem;
+	}
+}
+
+#message-warning, 
+#message-success {
+	display: none;
+	background: #0d0d0d;
+	border-radius: 3px;
+	padding: 3rem;
+	margin-bottom: 3.6rem;
+	width: 100%;
+}
+#message-warning {
+	color: #fa0003;
+}
+#message-success {
+	color: var(--base-color);
+}
+#message-warning i, 
+#message-success i {
+	margin-right: 10px;
+}
+
+/* form loader */
+#submit-loader {
+	display: none;
+	position: relative;
+	left: 0;
+	top: 1.8rem;
+	width: 100%;
+	text-align: center;
+	.text-loader {
+		display: none;
+		font-family: sans-serif;
+		color: #FFFFFF;
+		letter-spacing: .3rem;
+		text-transform: uppercase;
+	}
+}
+
+.oldie #submit-loader .s-loader {
+	display: none;
+}
+.oldie #submit-loader .text-loader {
+	display: block;
+}
+.contact-info {
+	margin: 4.8rem auto 0;
+	font-family:sans-serif;
+	font-size: 1.5rem;
+	text-align: center;
+}
+.contact-info .collapse {
+	padding: 0;
+}
+.contact-info .icon {
+	margin-bottom: 2.1rem;
+}
+.contact-info .icon i {
+	font-size: 4.2rem;
+	color: #FFFFFF;
+}
+.contact-info h5 {
+	color: var(--base-color);
+}
