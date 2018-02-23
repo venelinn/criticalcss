@@ -1,4 +1,4 @@
-# Crirical CSS Demo
+# Critical CSS Demo
 
 
 Note: This is PHP file with .html ext.
