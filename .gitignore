@@ -1,6 +1,4 @@
 node_modules/
-assets/css/*
-assets/js/*
-critical/*.php
+
 
 npm-debug.log
