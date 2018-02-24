@@ -39,7 +39,7 @@ You need to have NodeJs installed.
 <script src="/assets/critical/fetch-inject.js"></script>
 ```
 
-### Loading Non CSS/JS after page load
+### Loading Non Critical CSS/JS after page load
 ```css
 <script type="text/javascript">
      $.getDefer('/assets/css/style.css')
