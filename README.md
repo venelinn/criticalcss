@@ -1,7 +1,7 @@
 # Critical CSS Demo
 
 
-Note: This is PHP file with .html ext.
+Note: index.html is PHP file with .html ext.
 
 You need to have NodeJs installed.
 
@@ -33,25 +33,32 @@ You need to have NodeJs installed.
 /*! {target:a-target-without-space}@ */
 ```
 
-### JavaScript
-```javascript
-var target = require('gulp-css-critical');
+### Loading Critical JS 
+```
+<script src="/assets/critical/jquery-3.2.1.min.js"></script>
+<script src="/assets/critical/fetch-inject.js"></script>
+```
 
-// Same Directory
-gulp.task('target', function () {
-  return gulp.src('css/**/*.css')
-    .pipe(target())
-    .pipe(gulp.dest('css/'));
-});
+### Loading Non CSS/JS after page load
+```css
+<script type="text/javascript">
+     $.getDefer('/assets/css/style.css')
+</script>
 
-// New Directory
-gulp.task('target-new', function () {
-  return gulp.src('css/**/*.css')
-    .pipe(target({
-      base: 'output'
-    }))
-    .pipe(gulp.dest('output/'));
-});
+```js
+<script type="text/javascript">
+    $.getDefer('/assets/js/jquery.validation.min.js');
+    $.getDefer('/assets/js/main.min.js');
+
+    if(aJsFiles.length > 0) {
+        if (window.fetch && typeof window.fetch !== 'undefined') {
+            fetchInject(aJsFiles);
+        } else {
+            $.loopDeferScript(aJsFiles);
+        }
+    }
+</script>
+
 ```
 
 More info coming soon...
