@@ -40,12 +40,12 @@ You need to have NodeJs installed.
 ```
 
 ### Loading Non Critical CSS/JS after page load
-```css
+css
 <script type="text/javascript">
      $.getDefer('/assets/css/style.css')
 </script>
 
-```js
+js
 <script type="text/javascript">
     $.getDefer('/assets/js/jquery.validation.min.js');
     $.getDefer('/assets/js/main.min.js');
